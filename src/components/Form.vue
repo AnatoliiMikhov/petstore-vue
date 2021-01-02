@@ -109,14 +109,14 @@
             <!-- end of form-group -->
             <div class="col-md-12 verify">
               <pre>
-								First Name: {{ order.firstName }}
-								Last Name: {{ order.lastName }}
-								Address: {{ order.address }}
-								City: {{ order.city }}
-								Zip: {{ order.zip }}
-								State: {{ order.state }}
-								Method: {{ order.method }}
-								Gift: {{ order.gift }}
+First Name: {{ order.firstName }}
+Last Name: {{ order.lastName }}
+Address: {{ order.address }}
+City: {{ order.city }}
+Zip: {{ order.zip }}
+State: {{ order.state }}
+Method: {{ order.method }}
+Gift: {{ order.gift }}
 							</pre
               >
             </div>
