@@ -25,8 +25,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "my-header",
+  data() {
+    return {
+      sitename: "Vue Pet Store",
+    };
+  },
+  props: ["cartItemCount"],
+  methods: {
+    showCheckout() {
+      this.$router.push({ name: "Form" });
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
+a {
+  text-decoration: none;
+  color: black;
+}
 </style>
