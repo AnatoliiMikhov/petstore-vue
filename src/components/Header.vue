@@ -8,18 +8,21 @@
           </router-link>
         </h1>
       </div>
+      <!-- end of navbar-header -->
       <div class="nav navbar-nav navbar-right cart">
-        <button
-          type="button"
+        <router-link
+          active-class="active"
+          tag="button"
           class="btn btn-default btn-lg"
-          v-on:click="showCheckout"
+          :to="{ name: 'Form' }"
         >
           <span class="glyphicon glyphicon-shopping-cart">{{
             cartItemCount
-          }}</span>
-          Checkout
-        </button>
+          }}</span
+          >Checkout</router-link
+        >
       </div>
+      <!-- end of nav navbar-nav navbar-right cart -->
     </div>
   </header>
 </template>
@@ -33,11 +36,7 @@ export default {
     };
   },
   props: ["cartItemCount"],
-  methods: {
-    showCheckout() {
-      this.$router.push({ name: "Form" });
-    },
-  },
+  methods: {},
 };
 </script>
 
