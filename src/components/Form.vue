@@ -63,7 +63,7 @@
             <!-- end of form-group -->
 
             <div class="form-group">
-              <div class="col-md-6" boxes>
+              <div class="col-md-6 boxes">
                 <input
                   type="checkbox"
                   id="gift"
