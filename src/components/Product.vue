@@ -12,7 +12,7 @@
       <div class="col-md-6 col-md-offset-0 description">
         <h1>{{ product.title }}</h1>
         <p v-html="product.description"></p>
-        <p class="price">{{ product.price }}</p>
+        <p class="price">{{ product.price | formatPrice }}</p>
       </div>
       <!-- end of col-md-6 col-md-offset-0 description -->
     </div>
@@ -30,6 +30,25 @@ export default {
   methods: {
     edit() {
       this.$router.push({ name: "Edit" });
+    },
+  },
+  filters: {
+    formatPrice(price) {
+      if (!parseInt(price)) {
+        return "";
+      }
+      if (price > 99999) {
+        let priceString = (price / 100).toFixed(2);
+        let priceArray = priceString.split("").reverse();
+        let index = 3;
+        while (priceArray.length > index + 3) {
+          priceArray.splice(index + 3, 0, ",");
+          index += 4;
+        }
+        return "$" + priceArray.reverse().join("");
+      } else {
+        return "$" + (price / 100).toFixed(2);
+      }
     },
   },
   created: function () {
