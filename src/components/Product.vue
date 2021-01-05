@@ -13,6 +13,8 @@
         <h1>{{ product.title }}</h1>
         <p v-html="product.description"></p>
         <p class="price">{{ product.price | formatPrice }}</p>
+        <button @click="edit">Edit Product</button>
+        <router-view></router-view>
       </div>
       <!-- end of col-md-6 col-md-offset-0 description -->
     </div>
