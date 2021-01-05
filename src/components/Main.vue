@@ -11,11 +11,13 @@
           </div>
           <!-- end of col-md-5 col-md-offset-0 -->
           <div class="col-md-6 col-md-offset-0 description">
-            <router-link
-              tag="h1"
-              :to="{ name: 'Id', params: { id: product.id } }"
-              >{{ product.title }}</router-link
-            >
+            <h1>
+              <router-link
+                tag="a"
+                :to="{ name: 'Id', params: { id: product.id } }"
+                >{{ product.title }}</router-link
+              >
+            </h1>
             <p v-html="product.description"></p>
             <p class="price">
               {{ product.price | formatPrice }}
@@ -138,4 +140,7 @@ export default {
 </script>
 
 <style scoped>
+a:hover {
+  text-decoration: none;
+}
 </style>
