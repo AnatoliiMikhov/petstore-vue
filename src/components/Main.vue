@@ -72,6 +72,8 @@
 
 <script>
 import MyHeader from "./Header";
+import { mapGetters } from "vuex";
+
 export default {
   name: "imain",
   data() {
@@ -101,9 +103,7 @@ export default {
     },
   },
   computed: {
-    products() {
-      return this.$store.getters.products;
-    },
+    ...mapGetters(["products"]),
     cartItemCount() {
       return this.cart.length || "";
     },
